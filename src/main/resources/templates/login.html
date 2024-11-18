@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos/cabecero::cabecero-seccion(titulo='login')}">
+
+</head>
+<body>
+<div class="container text-center" style="margin:30px">
+<form th:action="@{/login}" method="post">
+    <div class="mb-3">
+        <label for="username">Nombre de usuario</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="mb-3">
+        <label for="password">Contraseña</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragmentos/cabecero::cabecero-seccion(titulo='editar')}">
+
+</head>
+<body>
+
+<div class="container text-center" style="margin:30px">
+    <h3>Editar Tarea</h3>
+</div>
+<div class="container">
+    <form action="/editar" th:object="${tarea}" method="post" >
+        <input type="hidden" th:field="*{idTarea}"/>
+
+        <div class="mb-3">
+            <label for="descripcionTarea" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="descripcionTarea" name="descripcionTarea"  required th:field="*{descripcionTarea}">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="completada" name="completada" th:field="*{completada}">
+            <label class="form-check-label" for="completada">Completada</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <a href="/" class="btn btn-danger btn-sm">Regresar</a>
+    </form>
+
+</div>
+</body>
+</html>
